@@ -1,0 +1,92 @@
+(function($,win,doc){if($('.filter-partners').length){conditionalLogic={'asian':partnersFieldsData.asianCountry,'aus_oce':partnersFieldsData.ausOceCountry,'eur':partnersFieldsData.eurCountry,'m_east':partnersFieldsData.mEastCountry,'n_america':partnersFieldsData.nAmericaCountry,'s_america':partnersFieldsData.sAmericaCountry,};(function(){urlSearchParams=new URLSearchParams(location.search);region=urlSearchParams.get('partners_region')??''
+country=urlSearchParams.get('partners_country')??''
+$('#partners_region').val(region)
+if(region){if(Object.keys(conditionalLogic).includes(region)){for(key in conditionalLogic[region]){$('#partners_country').append(`<option value='${key}'>${conditionalLogic[region][key]}</option>`)}}
+$('#partners_country').val(country)}})();$(doc).on('change','#partners_region',function(){v=$(this).val();$('#partners_country').html('')
+$('#partners_country').append(`<option value="">Select a Country</option>`)
+if(Object.keys(conditionalLogic).includes(v)){for(key in conditionalLogic[v]){$('#partners_country').append(`<option value='${key}'>${conditionalLogic[v][key]}</option>`)}}
+queryParams=location.origin+location.pathname+`?page_no=1`+((v!='')?`&partners_region=${v}`:'')
+history.pushState('','',queryParams)
+filter_partners()})
+$(doc).on('change','#partners_country',function(){v=$(this).val()
+r=$('#partners_region').val()
+queryParams=location.origin+location.pathname+`?page_no=1`+((r!='')?`&partners_region=${r}`:'')+((v!='')?`&partners_country=${v}`:'')
+history.pushState('','',queryParams)
+filter_partners()})
+$(doc).on('click','.pagination .pages li.page a',function(e){e.preventDefault();id=$(this).data('page-id')
+r=$('#partners_region').val()
+c=$('#partners_country').val()
+queryParams=location.origin+location.pathname+`?page_no=${id}`+((r!='')?`&partners_region=${r}`:'')+((c!='')?`&partners_country=${c}`:'')
+history.pushState('','',queryParams)
+filter_partners()})
+$(doc).on('click','#partners_clear',function(){queryParams=location.origin+location.pathname+`?page_no=1`
+history.pushState('','',queryParams)
+filter_partners()})
+function filter_partners(){urlSearchParams=new URLSearchParams(location.search);region=urlSearchParams.get('partners_region')??''
+country=urlSearchParams.get('partners_country')??''
+page_no=urlSearchParams.get('page_no')??1
+$.ajax({type:'POST',url:jquery_addition_data.ajaxUrl,data:{action:'filter_partners',region,country,page_no,},beforeSend:function(){$('.partners_loading').fadeIn()},success:function(resp){data=JSON.parse(resp)
+$('table.partners tbody').html(data.table_data)
+$('.pagination').html(data.pagination)
+$('.partners_loading').fadeOut()},error:function(){$('.partners_loading').fadeOut();$('table.partners tbody').html('<tr><td colspan="4"><b style="color:#F00">Something Wen\'t wrong, please try to <a href="">reload</a> or report this issue to <a href="mailto:support@ultraedit.com?subject=error occured on ultraedit on partners page&amp;body=I had an issue loading the partners list on the partners page at '+Date()+'" target="_blank">us</a></b></td></tr>')}})}
+filter_partners()}})(jQuery,window,document);(function($,win,doc){if($('.catalog-cards').length>0){if(location.hash=='#perpetual'){$('.catalog-switch button').removeClass('active')
+$('.catalog-switch .perp-btn button').addClass('active')
+$('.catalog-cards .subscription-tab').hide()
+$('.catalog-cards .perpetual-tab').show()}else{$('.catalog-switch button').removeClass('active')
+$('.catalog-switch .sub-btn button').addClass('active')
+$('.catalog-cards .perpetual-tab').hide()
+$('.catalog-cards .subscription-tab').show()}
+$(doc).on('click','.catalog-switch button',function(){$('.catalog-switch button').removeClass('active')
+$(this).addClass('active')
+if($(this).data('type')=='sub'){location.hash='subscription'
+$('.catalog-cards .perpetual-tab').stop().fadeOut('slow',function(){$('.catalog-cards .subscription-tab').stop().fadeIn('slow')})}else{location.hash='perpetual'
+$('.catalog-cards .subscription-tab').stop().fadeOut('slow',function(){$('.catalog-cards .perpetual-tab').stop().fadeIn('slow')})}})}})(jQuery,window,document);(function($,win,doc){if($('.customize-single-product').length){$(doc).on('click','.add-ons-row input[type=checkbox], .renewal-plans input[type=radio]',function(){if($(this).hasClass('multi-user-bulk-chk')){disable_checkout($(this));if(!$(this).is(':checked')&&$('input.data-list-input').val()>=20){$('input.data-list-input').val(20).trigger('change')}}else{get_updated_price()}})
+$(doc).on('change','.qty-row input[type=number]',function(){if($(this).val()<=20){if($('.multi-user-bulk-chk').is(':checked')){$('.multi-user-bulk-chk').click()}
+get_updated_price()}else{if(!$('.multi-user-bulk-chk').is(':checked')){$('.multi-user-bulk-chk').click()}}})
+$(doc).on('change','select.data-list-input',function(){$('input.data-list-input').val($(this).val()).trigger('change')});function disable_checkout(mult_user_chk){let s=$('.checkout button[type=submit]');$(mult_user_chk).is(":checked")?s.attr('disabled',!0).addClass('disabledButton'):s.attr('disabled',!1).removeClass('disabledButton')}
+function get_updated_price(){qty=$('.qty-row input[type=number]').val()
+add_ons=[]
+$('.add-ons-row input[type=checkbox]:checked').map((i,elem)=>{add_ons[add_ons.length]=elem.value})
+if($('.extra-year-chk').is(':checked')){add_ons[add_ons.length]='extra-year-chk'}
+$('.partners_loading').fadeOut()
+$.ajax({type:'POST',url:jquery_addition_data.ajaxUrl,data:{action:'get_catalog_updated_price',post_id:jquery_addition_data.post_id,coupon:$('[name="coupon"]').length?$('[name="coupon"]').val():'',qty,add_ons,},beforeSend:function(){$('.partners_loading').fadeIn()},success:function(data){data=JSON.parse(data)
+$('.order-summary-row').html(data.orderSummary)
+$('.order-summary-row>ul').prepend(`<li class="order-summary-heading">Product</li>`)
+if($('.order-summary-row>ul>li').length>2){$(`<li class="order-summary-heading">Add-ons & discount</li>`).insertAfter('.order-summary-row .parent')}
+$('.total-price .final-price').html(data.price)
+if(data.qty!=$('.qty-row input[type=number]').val()){$('.qty-row input[type=number]').val(data.qty).trigger('change')}
+$('.partners_loading').fadeOut()
+if(data.renewal_type=='subscription'){if($('.extra-year-chk').is(':checked')){$('.price-period').html('/2yrs')}else{$('.price-period').html('/yr')}}else{$('.price-period').html('')}},error:function(){$('.partners_loading').fadeOut()}})}
+get_updated_price()}})(jQuery,window,document);(function($,win,doc){if($('.customize-single-product').length){urlParams=new URLSearchParams(location.search)
+if(urlParams.has('error')){$errorType=urlParams.get('error')
+if($errorType=='nonce_verify'||$errorType=='server_err'){$('.error_msg').html("<div class='error_alert'><strong>Something went wrong, Please try again later</strong></div>")}
+history.replaceState('','',location.origin+location.pathname)}}})(jQuery,window,document);(function($,win,doc){if($('.jquery-validate-form').length){urlParams=new URLSearchParams(location.search)
+if(urlParams.has('error')){$errorType=urlParams.get('error')
+if($errorType=='captcha_verify'){$('.error_msg').html("<div class='error_alert'><strong>Captcha Verify Failed. Please try again</strong></div>")
+$('html, body').animate({scrollTop:$('.custom-form-submission').offset().top-50,},1000)}
+if($errorType=='nonce_verify'||$errorType=='unknown'){$('.error_msg').html("<div class='error_alert'><strong>Something went wrong, Please try again later</strong></div>")
+$('html, body').animate({scrollTop:$('.custom-form-submission').offset().top-50,},1000)}
+history.replaceState('','',location.origin+location.pathname)}}})(jQuery,window,document);(function($){if($('.uninstalling-form').length){$('.uninstalling-form')?.validate({rules:{'uninstall_reason[]':{required:!0,minlength:1,},email:{required:function(){return $('input[name="confirm_contact"][value="Yes"]').is(':checked')},email:"required",}},errorPlacement:function(error,elem){if(elem.attr("name")=="uninstall_reason[]"){elem.parent().parent().parent('div').append(error)}else{error.insertAfter(elem)}},messages:{'uninstall_reason[]':"Please select at least one reason.",}})
+$('#email_address').attr('placeholder','Your email address:')
+$('input[name="confirm_contact"]').on('change',function(){if($(this).val()=='Yes'){$('#email_address').attr('placeholder','Your email address:')}else{$('#email_address').attr('placeholder','Your email address: (optional)')}})}})(jQuery);(function($){if($('form.request-a-quote').length){urlParams=new URLSearchParams(location.search)
+if(urlParams.has('product')&&$(`#software-product option[value=${urlParams.get('product')}]`).length){$('form.request-a-quote #software-product').val(urlParams.get('product')).change()}}})(jQuery);(function($){if($('form.newsletter-form').length){params=new URLSearchParams(location.search)
+if(params.has('email')){$('form.newsletter-form #email').val(params.get('email'))}}})(jQuery);(($)=>{if($('#disc-ribbon').length){$(window).scroll(function(){if($(this).scrollTop()>50){$('#disc-ribbon').addClass("sticky_header")}else{$('#disc-ribbon').removeClass("sticky_header")}})
+endtimestamp=$('#disc-ribbon').data('timestamp')
+setInterval(()=>{endTime=new Date(endtimestamp).toLocaleString()
+endTime=(Date.parse(endTime)/1000)
+const date=new Date();var offset=-300;var estDate=new Date(date.getTime()+offset*60*1000);now=(Date.parse(estDate)/1000)
+leftTime=endTime-now
+days=Math.floor(leftTime/86400)
+hours=Math.floor((leftTime-(days*86400))/3600)
+minutes=Math.floor((leftTime-(days*86400)-(hours*3600))/60)
+seconds=Math.floor((leftTime-(days*86400)-(hours*3600)-(minutes*60)))
+if(days){hours=+hours+(24*days)}
+if(hours<"10"){hours="0"+hours}
+if(minutes<"10"){minutes="0"+minutes}
+if(seconds<"10"){seconds="0"+seconds}
+$('#disc-ribbon .timer .time-item .number.hour').text(hours)
+$('#disc-ribbon .timer .time-item .number.mins').text(minutes)
+$('#disc-ribbon .timer .time-item .number.secs').text(seconds)},1000)}})(jQuery);(function($){if($('.footer-newsletter form').length){$.validator?.addMethod('emailRegex',(val,elem)=>{return/^[^@]+@[^@]+\.[^@]+$/.test(val)},"Please Enter Valid Email")
+$('.footer-newsletter form')?.validate({rules:{email:{required:!0,emailRegex:!0,}}})}})(jQuery);(function($,w,d){validateCaptcha=function(){if(grecaptcha.getResponse()===''){$('.error_msg').html('')}}
+$.validator?.addMethod('emailRegex',function(v,e,p){return/(?:((?:[\w-]+(?:\.[\w-]+)*)@(?:(?:[\w-]+\.)*\w[\w-]{0,66})\.(?:[a-z]{2,6}(?:\.[a-z]{2})?));*)/g.test(v)},"Please Enter Valid Email Address")
+$('.jquery-validate-form')?.validate({submitHandler:function(form){if(grecaptcha.getResponse()!==''){form.submit()}else{$('.error_msg').html(`<div class="error_alert"><strong>reCaptcha Required. Please complete reCaptcha</strong></div>`)}},rules:{name:'required',email:{required:!0,emailRegex:!0,},subject:'required',message:'required',},})})(jQuery,window,document)
