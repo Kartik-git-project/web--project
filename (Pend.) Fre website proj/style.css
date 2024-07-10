@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');  /* Playfair Display */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /* Poppins */
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Playfair Display;
+    position: relative;
+}
+
+body{
+    background-color: white;
+}
+
+nav{
+    background-color: white;
+    max-width: 50%;
+}
+
+.container{
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.logoimg span{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    opacity: 0.6;
+}
+
+.logoimg{
+    display: flex;
+    position: relative;
+    left: 200px;
+    top: 25px;
+
+}
+
+.nav_element ul{
+    display: flex;
+    list-style-type: none;
+    position: relative;
+    left: 550px;
+    
+    
+}
+
+.nav_element ul li{
+    padding:  10px 14px 0px 14px ;
+    font-family: Poppins;
+}
+
+.call_logo{
+    position: relative;
+    left: 1000px;
+    top: -70px;
+}
+
+
+.mail_logo{
+    position: relative;
+    left: 1050px;
+    top: -95px;
+}
+
+
+.cart_logo{
+    position: relative;
+    left: 1100px;
+    top: -120px;
+}
+
+
+main{
+    background-image:url(assets/bg.jpg);
+    /* background: rgba(51, 170, 51, 0.473) ; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    background-attachment: fixed;
+    border: 40px solid white;
+    height: 100vh;
+    background-size: max(1700px, 100vw);
+    /* max-width: 100%; */
+}
+
+
+main .box{
+    height: 100vh;
+    background-color: black;
+    opacity: 0.50;
+    
+}
+
+.maintext{
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    left: 19vw;
+    top: 0vh;
+}
+
