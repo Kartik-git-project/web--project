@@ -1,0 +1,44 @@
+.cardbox{
+    border: 6px solid var(--color);
+    width: 250px;
+    height: 400px;
+    background-color: purple ;
+    border-radius: 5%;
+    margin: 1px;
+    margin-left: 500px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 10px 10px 13px rgb(17, 7, 17);
+
+}
+.cardimg img{
+    width: 240px;
+    height: 190px;
+    border: 0.01px solid ;
+    margin: 1%;
+    margin-left: 5px;
+    border-radius: 10%;
+    
+}
+.btn button  {
+    background-color: rgb(71, 81, 139);
+    color: rgb(255, 65, 65);
+    text-align: center;
+    margin: 1%;
+    margin-left: auto;
+    border: 1px solid magenta;
+    border-radius:60%;
+}
+.btn button  :hover{
+    background-color: green;
+    color: var(--seccol);
+    cursor: pointer;
+}
+
+.para{
+    text-align: center;
+    font-family: Tiny5;
+    color: pink;
+    text-transform: capitalize;
+
+}
