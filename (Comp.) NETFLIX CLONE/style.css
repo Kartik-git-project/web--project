@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Poppins;    
+}
+
+body{
+    background-color: black;
+}
+
+.main{
+    background-image: url(assets/images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: max(1700px, 100vw);
+    height: 100vh;
+    position: relative;
+}
+
+.main .box{
+    height: 100vh;
+    width: 100%;
+    opacity: 0.44;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    
+}
+
+nav{
+    margin-top: 20px;
+    max-width: 69vw;
+    margin: auto;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 66px;
+    position: relative;
+    z-index: 15;
+    padding: 20px 0px 0px 0px;
+}
+
+nav button{
+    position: relative;
+    z-index: 10;
+
+}
+
+.hero{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 14.0%);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Nunito Sans;
+    gap: 12px;
+    padding:0px 30px 20px 30px;
+    
+}
+
+.hero> :nth-child(1){
+    font-weight: 900;
+    font-size: 45px;
+    text-align: center;
+}
+
+.hero> :nth-child(2){
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    
+}
+
+.hero> :nth-child(3){
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.seperation{
+    height: 9px;
+    background-color: rgb(85, 84, 84);
+    padding: 0px 0px;
+}
+
+.btn{
+    padding:7px 46px 7px 46px;
+    background-color:rgba(0, 0, 0, 0.432);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.384);
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 5px;
+}
+
+.btn-red{
+    background-color: red ;
+    color: white;
+    padding: 11px 40px;
+    font-size: 30px;
+    border-radius: 5px;
+}
+
+.hero-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-red-sn{
+    background-color: red ;
+    color: white;
+
+}
+
+input{
+    padding: 20px 130px 18px 15px;
+    font-size: 20px;
+    background-color: rgb(0 0 0 / 51%);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.568);
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    color: white;
+}
+
+.first .bold{
+    font-size: 50px;
+    font-weight: 750;
+}
+
+.first .secbold{
+    font-size:27px ;
+}
+
+.secvideo{
+    position: absolute;
+    margin-top: -387px;
+    margin-left: 80px;
+    z-index: -9;
+}
+
+.second{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 45vw;
+    color: white;
+}
+
+.bold2{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -84px;
+    font-weight: 900;
+    font-size: 45px;
+    
+    /* margin: 0px 0px 10px 0px; */
+}
+
+.secbold2{
+    position: absolute;
+    margin-left: 800px;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.third{
+    position: relative;
+}
+.secvideo2{
+    position: absolute;
+    z-index: -9;
+    margin-top: -450px;
+    margin-left: 120px;
+    
+}
+
+.secbold3{
+    position: absolute;
+    margin-left: 800px;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.bold3{
+    position: absolute;
+    margin-left: 800px;
+    margin-top: -30px;
+    font-weight: 900;
+    font-size: 45px;
+    
+    /* margin: 0px 0px 10px 0px; */
+}
+
+.faqs{
+    color: rgba(255, 255, 255);
+    font-size: 48px;
+    font-weight: 900;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.box span{
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+
+    
+    
+}
+
+.faqbox{
+
+    background-color: rgb(85 84 84 / 60%);
+    width: 1153px;
+    height: 35px;
+    margin-left: 250px ;
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+    transition: all 1s ease-out;
+}
+
+.faqbox:hover{
+    transition: all 1s ease-out;
+    background-color: red;
+
+}
