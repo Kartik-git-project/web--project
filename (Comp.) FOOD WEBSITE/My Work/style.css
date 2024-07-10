@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');/* Bree Serif */
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); /* Open Sans */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+}
+
+#logo img{
+    width: 90px;
+    height: 90px;
+    margin: 0px 0px;
+    filter: contrast(1.3);
+
+}
+
+nav::before{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    content: "";
+    z-index: -1;
+    opacity: 0.4;
+    transition: all 1s ease-out;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    font-family: Bree Serif;
+}
+  
+nav ul li{
+    font-size: 1.3rem;
+}
+
+nav ul li a{
+    color: rgb(77, 58, 58);
+    display: block;
+    border-radius: 20px;
+    padding: 3px 20px;
+    text-decoration: none;
+
+}
+
+nav ul li a:hover{
+    color: rgb(0, 0, 0);
+    background-color: white;
+    transition: all 0.7s ease-out;
+    
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    font-family: Bree Serif;
+}
+
+#home::before{
+    background: url(images/bg2.jpg) no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    content: "";
+    z-index: -1;
+    /* opacity: ; */
+    filter: contrast(1.2);
+    transition: all 1s ease-out;
+    
+}
+
+#home h1{
+    color: white;
+    text-align: center;
+}
+
+#home p{
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Services Section */
+
+.services-container::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 635px;
+    opacity: 0.5;
+    z-index: -1;
+    position: absolute;
+}
+
+#services{
+    display: flex;
+    margin: 34px;
+
+}
+
+#services .box{
+    border: 2px solid brown;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(218, 217, 217);
+}
+
+#services .box img{
+    height: 170px;
+    display: block;
+    margin: auto;
+}
+
+#services .box p{
+    font-family:Open Sans ;
+    font-weight: 600;
+}
+
+/* Client-Section */
+#client-section{
+    height: 300px;
+}
+
+#clients{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+#clients img{
+    height: 120px;
+}
+
+.client-items{
+    padding: 30px;
+    position: relative;
+}
+
+.client-items:nth-child(1){
+    position: relative;
+    left: 60px;
+}
+
+#client-section::before{
+    content: "";
+    position: absolute;
+    background: url(images/bg1.jpg) no-repeat center center/cover;
+    width: 100%;
+    height: 52%;
+    z-index: -1;
+    opacity: 0.4;
+
+}
+
+
+/* Contact Section  */
+#contact{
+    position: relative;
+}
+
+#contact::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    background: url(images/contactbg.jpg) no-repeat center center/cover;
+    filter:blur(7px) ;
+    
+}
+
+#contact-box form{
+    width: 40%;
+}
+#contact-box label{
+    font-size:1.4rem ;
+    font-family: Bree Serif;
+}
+
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 34px;
+}
+
+#contact-box input,
+
+#contact-box textarea{
+    width: 100%;
+    padding: 0.6rem; 
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    padding: 9px 20px;
+}
+
+/* How utility classes works */
+.h-primary{
+    font-size: 3.8rem;
+    padding: 12px;
+    font-family: Bree Serif;
+}
+
+
+.h-secondary{
+    text-align: center;
+    font-family: Bree Serif;
+}
+
+
+.btn{
+    padding: 6px 20px;
+    margin: 17px;
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(165, 42, 42, 0.562);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.center{
+    text-align: center;
+}
+
+
+
