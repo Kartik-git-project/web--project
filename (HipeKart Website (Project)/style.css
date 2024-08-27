@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+/* Oswald */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Poppins */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch+Pop&display=swap');
+/* Rubik Glitch Pop */
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap');
+/* Playwrite Chile */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playwrite+CL:wght@100..400&display=swap');
+/* Oswald */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* Anton */
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: rgba(255, 192, 203, 0.466);
+}
+
+nav{
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+}
+
+.logo_navbar a {
+    text-decoration: none;
+    font-size: 34px;
+    color: rgb(184, 2, 184);
+    background-color: rgba(222, 184, 135, 0.767);
+    font-weight: 800;
+    font-family: Anton;
+    border-radius: 5px;
+    border: none;
+    transition: all 1s ease-in-out;
+    
+}
+
+.logo_navbar a:hover {
+    background-color:rgba(175, 148, 114, 0.678) ;
+    color: maroon ;
+    font-family: Anton;
+    border-radius: 23px 5px 20px 5px;
+}
+
+.search_navbar{
+    align-items: center;
+    position: relative;
+    left: 190px;
+    
+    
+}
+
+.search_navbar input{
+    width: 390px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 10px;
+    border: none;
+    transition: all 1s ease-in-out;
+    background-color: rgba(247, 84, 111, 0.158);
+    color: brown;
+    font-size: 16px;    
+}
+
+
+.search_navbar input:focus{
+   outline: none;
+   background-color: rgba(255, 192, 203, 0.205);
+   border-top: 2.5px solid rgb(243, 139, 157) ;
+   border-right:none;
+   border-left: none;
+   border-bottom:2.5px solid rgb(243, 139, 157) ;
+   
+}
+
+.search_navbar input::placeholder{
+    font-size: 14px;
+    font-family: Poppins;
+    
+}
+
+.button_navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: 261px;
+    align-items: center;
+    position: relative;
+    top: 30%;
+}
+
+.button_navbar ul li a{
+    padding: 0px 10px;
+    text-decoration: none; 
+    margin: 5px;
+    color: rgb(255, 81, 110);
+    font-size: 16px;
+    font-weight: 550;
+    font-family: Poppins;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.button_navbar ul li a:hover{
+    color: maroon;
+}
+
+.slogan{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+    font-size: 60px;
+    font-weight: 900;
+    color:#5e5343;
+    font-family:Oswald;
+    
+
+}
+
+
+.sample_text{
+    position: relative;
+    top: 90px;
+    width: 500px;
+    left: 20px;
+    margin: 20px;
+}
+
+.sample_text span{
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 600;
+    text-align: center;
+    /* text-align: center; */
+}
+
+.container{
+    display: flex;
+}
+
+.image_heading span{
+    font-family: Anton;
+    position: absolute;
+    left: 850px;
+    font-size: 70px;
+    color: #894450;
+    top: 150px;
+}
+
+.page_image img{
+    position: relative;
+    filter: contrast(4);
+    top: 230px;
+    left: 20px;
+    height: 160px;
+
+}
+
+
+
+.page_b{
+    position: relative;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.main_text span{
+    position: relative;
+    color: #702a2a;
+    top: 100px;
+    left: 590px;
+    font-size: 40px;
+    font-family: Oswald;
+    background-color: pink;
+    border-radius: 50px;
+    padding: 1px 10px 1px 10px;
+    transition: all 1.4s ease-in-out ;
+}
+
+.main_text span:hover{
+    /* padding:1px 40px 1px 40px ; */
+    padding-left: 40px;
+    padding-right: 40px;
+    color: brown;
+
+}
+
+.cards{
+    width: 90%;
+    height: 500px;
+    /* border: 2px solid darkred; */
+    position: relative;
+    top: 120px;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_a{
+    position: relative;
+    width: 250px;
+    height: 400px;
+    border: 2px solid rgb(192, 89, 106);
+    padding: 10px  10px 10px  10px ;
+    margin: 0px  80px  0px  0px ;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0px 1px 20px 8px rgba(175, 66, 66, 0.719); 
+}
+
+
+.card_b{
+    position: relative;
+    width: 250px;
+    height: 400px;
+    border: 2px solid rgba(175, 66, 66, 0.719);
+    padding: 10px  10px  10px  10px ;
+    margin: 0px  80px  0px  0px ;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0px 1px 20px 8px rgba(175, 66, 66, 0.719);
+}
+
+
+.card_c{
+    position: relative;
+    width: 250px;
+    height: 400px;
+    border: 2px solid rgba(175, 66, 66, 0.719);
+    padding: 10px  10px  10px  10px ;
+    /* margin: 0px  10px  0px  0px ; */
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0px 1px 20px 8px rgba(175, 66, 66, 0.719);
+}
+
+.text_card_a{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Poppins;
+}
+
+
+.text_card_b{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Poppins;
+}
+
+
+.text_card_c{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Poppins;
+}
+
+.valentino_logo img{
+    width: 200px;
+    position: relative;
+    left: 570px;
+    top: 140px;
+    filter: contrast(10); 
+}
+
+
+.gucci_logo img{
+    width: 200px;
+    position: relative;
+    left: 570px;
+    top: 140px;
+}
+
+
+.prada_logo img{
+    width: 350px;
+    position: relative;
+    left: 500px;
+    top: 100px;
+}
+
+/* .container_c{
+    position: relative;
+} */
+
+
+
+.prada_card{
+    top: 10px;
+}
+
+
+/* VALENTINO  */
+.val_1{
+    width: 200px;
+}
+
+
+.val_2{
+    width: 200px;
+}
+
+
+.val_3{
+    width: 200px;
+    position: relative;
+    top: 90px;
+}
+.val_3_text{
+    position: relative;
+    top: 50px;
+}
+
+
+/* GUCCI  */
+.guc_1{
+    position: relative;
+    top: 30px;
+    width: 200px;
+}
+
+
+.guc_2{
+    position: relative;
+    top: 30px;
+    width: 200px;
+}
+
+
+.guc_3{
+    position: relative;
+    top: 30px;
+    width:200px;
+}
+
+.gucc_text{
+    position: relative;
+    top: 60px;
+}
+
+
+/* PRADA  */
+.par_1{
+    width: 200px;
+}
+
+
+.par_2{
+    width: 200px;
+}
+
+
+.par_3{
+    width: 200px;
+}
+
+.more a{
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(129, 77, 129);
+    font-family: Anton;
+    background-color: rgba(216, 112, 147, 0.507);
+    border-radius: 8px;
+    position: relative;
+    left: 610px;
+    box-shadow: 0px 0px 7px 7px rgba(216, 112, 147, 0.856);
+    transition: all 1s ease-in-out;
+}
+
+.more a:hover{
+    color: rgb(82, 45, 82);
+    border-radius: 20px;
+}
+
+
+.container_foot{
+    position: relative;
+    left:70px;
+    top: 90px;
+    width: 90%;
+    height: 300px;
+    /* border: 2px solid rgb(209, 66, 66); */
+    box-shadow: 0px 0px 18px 5px rgba(250, 128, 114, 0.815);
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.096);
+    border-radius: 30px;
+    bottom: 100px;
+    
+}
+
+.program{
+    padding: 80px;
+}
+
+.service{
+    padding: 80px;
+}
+
+.newsletter{
+    padding: 80px;
+}
+
+.contact{
+    padding: 80px;
+}
+
+.foot_content_head{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Poppins;
+}
+
+.program ul{
+    list-style-type: none;
+    
+}
+
+
+.program ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+    color: rgb(170, 63, 81);
+}
+
+.program ul li a:hover{
+    color:#5f1d1d;
+}
+
+
+
+.contact ul{
+    list-style-type: none;
+    
+}
+
+.contact ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+    color: rgb(170, 63, 81);
+}
+
+.contact ul li a:hover{
+    color:#5f1d1d;
+}
+
+
+.service ul{
+    list-style-type: none;
+    
+}
+
+.service ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+    color: rgb(170, 63, 81);
+}
+
+.service ul li a:hover{
+    color:#5f1d1d;
+}
+
+
+.newsletter ul{
+    list-style-type: none;
+   
+}
+
+.newsletter label a {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+    color: rgb(170, 63, 81);
+}
+
+.newsletter form input{
+    border: none;
+    border-radius: 3px;
+    padding: 6px;
+    background-color:rgba(128, 128, 128, 0.116);
+    border-top:1px solid rgb(66, 23, 23);
+    border-bottom:1px solid rgb(66, 23, 23);
+}
+
+.newsletter form input::placeholder{
+    color: #894450;
+
+}
+
+.newsletter form input:focus{
+    outline: none;
+    color: rgb(114, 13, 13);
+}
+
+.newsletter label a:hover{
+    color:#5f1d1d;
+}
+
+footer{
+    position: relative;
+}
+
+.end{
+    display: flex;
+    position: relative;
+    top: 110px;
+    left: 540px;
+    font-size: 20px;
+}
+
+.last_line span{
+    font-family: Poppins;
+}
+
+.mobile_num span{
+    color: #5f1d1d;
+}
+
+
+.mail_address span{
+    color: #5f1d1d;
+}
+
+
+.checkout span a{
+    text-decoration:none;
+    color: #894450;
+    font-size: 20px;
+    font-family: Anton;
+    background-color: #89444f36;
+    padding: 0px 40px 0px 40px;
+    border-radius: 20px;
+    transition: all 1s ease-in-out;
+}
+
+
+.checkout span a:hover{
+    padding: 0px 55px 0px 55px; 
+    color: #5f1d1d;
+}
+
+.buynow_b span{
+    position: relative;
+    top: 65px;
+}
+
+.buynow_a span{
+    position: relative;
+    top: 55px;
+}
+
+
+
+
